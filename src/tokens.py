@@ -19,8 +19,21 @@ class TokenType(Enum):
     LBRACES = "{"
     RBRACES = "}"
 
+    MINUS= "-"
+    BANG= "!"
+    ASTERISK = "*"
+    SLASH = "/"
+    LT = "<"
+    GT = ">"
+
     FUNCTION = "FUNCTION"
     LET = "LET"
+
+    TRUE= "TRUE"
+    FALSE= "FALSE"
+    IF= "IF"
+    ELSE= "ELSE"
+    RETURN= "RETURN"
 
 @dataclass
 class Token:
@@ -29,5 +42,10 @@ class Token:
 
 keywords = {
     "fn" : TokenType.FUNCTION,
-    "let" : TokenType.LET
+    "let" : TokenType.LET,
+    "true" : TokenType.TRUE,
+    "false" : TokenType.FALSE,
+    "if" : TokenType.IF,
+    "else" : TokenType.ELSE,
+    "return" : TokenType.RETURN
 }

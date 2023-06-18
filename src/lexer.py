@@ -40,6 +40,18 @@ class Lexer:
                 tok = Token(TokenType.RBRACES, self.ch)
             case "+":
                 tok = Token(TokenType.PLUS, self.ch)
+            case "-":
+                tok = Token(TokenType.MINUS, self.ch)
+            case "*":
+                tok = Token(TokenType.ASTERISK, self.ch)
+            case "!":
+                tok = Token(TokenType.BANG, self.ch)
+            case "/":
+                tok = Token(TokenType.SLASH, self.ch)
+            case "<":
+                tok = Token(TokenType.LT, self.ch)
+            case ">":
+                tok = Token(TokenType.GT, self.ch)
             case "\0":
                 tok = Token(TokenType.EOF, "")
             case other:

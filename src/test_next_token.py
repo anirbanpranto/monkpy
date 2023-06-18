@@ -5,10 +5,12 @@ def test_next_token():
     input = """
     let five = 5;
     let ten = 10;
-    let add = fn(x, y){
+    let add = fn(x, y) {
         x + y;
     };
     let result = add(five, ten);
+    !-/*5;
+    5 < 10 > 5;
     """
     tests = [
             TokenType.LET, 
@@ -47,7 +49,19 @@ def test_next_token():
             TokenType.IDENT,
             TokenType.RPAREN,
             TokenType.SEMICOLON,
-            TokenType.EOF,
+            TokenType.BANG,
+            TokenType.MINUS,
+            TokenType.SLASH,
+            TokenType.ASTERISK,
+            TokenType.INT,
+            TokenType.SEMICOLON,
+            TokenType.INT,
+            TokenType.LT,
+            TokenType.INT,
+            TokenType.GT,
+            TokenType.INT,
+            TokenType.SEMICOLON,
+            TokenType.EOF
     ]
     l = new(input)
     for i in range(len(tests)):
